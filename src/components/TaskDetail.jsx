@@ -20,8 +20,7 @@ export const TaskDetail = ({ taskId, onClose }) => {
         onClick={() => {
           onClose();
           window.history.replaceState(null, "Home", "/");
-         
-        }}
+          }}
       >
         Close
       </button>

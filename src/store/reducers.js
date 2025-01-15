@@ -45,6 +45,6 @@ const rootReducer = combineReducers({
 });
 
 
-//console.log("Initial state:", rootReducer({}, {}));
+console.log("Initial state:", rootReducer({}, {}));
 
 export default rootReducer;

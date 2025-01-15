@@ -7,7 +7,6 @@
   font-family: Arial, sans-serif;
 }
 
-/* Шапка */
 header {
   background-color: #0288d1; 
   padding: 2rem 0;
@@ -43,7 +42,6 @@ header > a:hover {
   }
 }
 
-/* Карточки */
 .card {
   background-color: #b3e5fc; 
   border: 1px solid #81d4fa;

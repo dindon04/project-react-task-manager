@@ -16,7 +16,7 @@ store.subscribe(() => {
   localStorage.setItem("reduxState", JSON.stringify(store.getState()));
 });
 
-/*console.log("Initial state:", persistedState);*/
-/*console.log("Current state:", store.getState());*/
+console.log("Initial state:", persistedState); 
+console.log("Current state:", store.getState()); 
 
 export default store;

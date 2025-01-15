@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .task-list {
+    list-style-type: none;
+    padding: 20px;
+  }
+  
+  .task-item {
+    margin-bottom: 8px;
+  }
+  

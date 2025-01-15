@@ -1,38 +1,89 @@
-.App {
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #e0f7fa; 
+  color: #01579b; 
+  font-family: Arial, sans-serif;
+}
+
+/* Шапка */
+header {
+  background-color: #0288d1; 
+  padding: 2rem 0;
   text-align: center;
+  border-bottom: 4px solid #01579b; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header > a {
+  color: white; 
+  text-decoration: none;
+  padding: 0 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header > a:hover {
+  text-decoration: underline;
+  color: #b3e5fc; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Карточки */
+.card {
+  background-color: #b3e5fc; 
+  border: 1px solid #81d4fa;
+  border-radius: 8px;
+  padding: 2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.read-the-docs {
+  color: #4fc3f7; 
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.read-the-docs a {
+  color: #0288d1;
+  text-decoration: underline;
+}
+
+.read-the-docs a:hover {
+  color: #01579b;
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  header {
+    padding: 1rem 0;
+  }
+
+  header > a {
+    font-size: 1rem;
   }
 }

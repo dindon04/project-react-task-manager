@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./TaskList.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"; /*отправляем действие в redux*/
 import { addTask, deleteTask, filterTasks, toggleTask } from "../store/actions";
 
 export const TaskList = ({ setRightBlockState }) => {
@@ -8,6 +8,7 @@ export const TaskList = ({ setRightBlockState }) => {
   const dispatch = useDispatch();
   const [taskName, setTaskName] = useState("");
 
+  /*создаем задачу*/
   const addTaskHandler = () => {
     if (taskName.trim() !== "") {
       const newTask = {
@@ -23,6 +24,7 @@ export const TaskList = ({ setRightBlockState }) => {
     }
   };
 
+  /*чекбокс состояние*/
   const toggleTaskHandler = (id) => {
     dispatch(toggleTask(id));
   };

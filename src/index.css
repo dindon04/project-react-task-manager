@@ -71,7 +71,7 @@ button {
 }
 
 button:hover {
-  background-color: #0277bd; 
+  background-color: #0277bd;
 }
 
 button:active {
@@ -81,5 +81,5 @@ button:active {
 button:disabled {
   background-color: #b3e5fc;
   color: #888;
-  cursor: not-allowed; 
+  cursor: not-allowed;
 }

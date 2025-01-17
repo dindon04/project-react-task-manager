@@ -7,6 +7,7 @@ import {
   FILTER_TASKS,
 } from "./actions";
 
+/*управляем задачами для таксов*/ 
 const tasks = (state = [], action) => {
   switch (action.type) {
     case ADD_TASK:
@@ -30,10 +31,11 @@ const tasks = (state = [], action) => {
   }
 };
 
+/*фильтр задач*/
 const filter = (state = "all", action) => {
   switch (action.type) {
     case FILTER_TASKS:
-      return action.payload;
+      return action.payload; 
     default:
       return state;
   }

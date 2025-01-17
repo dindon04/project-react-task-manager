@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { editTask } from "../store/actions";
 import "./EditTask.css";
@@ -6,10 +6,20 @@ import "./EditTask.css";
 export const EditTask = ({ taskId, onSubmit }) => {
   const tasks = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
+  
+  // найти задачу по id
   const task = tasks.find((item) => item.id === parseInt(taskId));
 
-  const [taskName, setTaskName] = useState(task?.name);
-  const [taskDescription, setTaskDescription] = useState(task?.description);
+  const [taskName, setTaskName] = useState("");
+  const [taskDescription, setTaskDescription] = useState("");
+
+  // обновление состояния при изменении taskId
+  useEffect(() => {
+    if (task) {
+      setTaskName(task.name);
+      setTaskDescription(task.description);
+    }
+  }, [taskId, task]);
 
   if (!task) return <div>Task not found</div>;
 
@@ -31,13 +41,12 @@ export const EditTask = ({ taskId, onSubmit }) => {
       })
     );
     if (onSubmit) onSubmit();
+
+    window.history.replaceState(null, "Home", "/");
   };
 
   return (
-    <div className="edit-div"
-      style={{
-        margin: "10px"
-      }}>
+    <div className="edit-div" style={{ margin: "10px" }}>
       <h1>Edit Task(id: {taskId})</h1>
       
       <form onSubmit={handleSubmit}>
@@ -59,14 +68,8 @@ export const EditTask = ({ taskId, onSubmit }) => {
             onChange={handleTaskDescriptionChange}
           />
         </div>
-        <button
-          type="submit"
-          onClick={() => {
-            window.history.replaceState(null, "Home", "/");
-          }}
-        >
-          Save
-        </button>
+
+        <button type="submit">Save</button>
       </form>
     </div>
   );

@@ -23,6 +23,6 @@ const RightBlock = ({ id, type, setRightBlockState }) => {
     <div style={{flex: 1, borderLeft: '1px solid black'}}>
       {type === "edit" && <EditTask taskId={id} onSubmit={() => setRightBlockState({id: null, type: null})} />}
       {type === "detail" && <TaskDetail taskId={id} onClose={() => setRightBlockState({id: null, type: null})} />}
-    </div>
+    </div> 
   );
 };
